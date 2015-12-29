@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="ofbiz-13.07.02">
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/applications/accounting/src"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/applications/content/src"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/applications/manufacturing/src"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/applications/marketing/src"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/applications/order/src"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/applications/party/src"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/applications/product/src"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/applications/securityext/src"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/applications/humanres/src"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/applications/workeffort/src"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/framework/base/build/gen-src/javacc"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/framework/base/src"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/framework/bi/src"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/framework/catalina/src"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/framework/common/src"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/framework/datafile/src"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/framework/entity/src"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/framework/entityext/src"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/framework/geronimo/src"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/framework/minilang/src"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/framework/security/src"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/framework/service/src"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/framework/sql/src"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/framework/sql/build/gen-src/javacc"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/framework/start/src"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/framework/testtools/src"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/framework/webapp/src"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/framework/webtools/src"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/framework/widget/src"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/specialpurpose/ecommerce/src"/>
+        <property name="context-root" value="ofbiz-13.07.02"/>
+        <property name="java-output-path" value="/ofbiz-13.07.02/bin"/>
+    </wb-module>
+</project-modules>
