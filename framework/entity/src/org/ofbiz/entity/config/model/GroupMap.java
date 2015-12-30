@@ -45,7 +45,9 @@ public final class GroupMap {
         if (datasourceName.isEmpty()) {
             throw new GenericEntityConfException("<group-map> element datasource-name attribute is empty" + lineNumberText);
         }
-        this.datasourceName = datasourceName;
+        //MODIFY
+        String phase = System.getProperty("ofbiz.db", "@@@");
+        this.datasourceName = datasourceName.replace("${db}", phase);    
     }
 
     /** Returns the value of the <code>group-name</code> attribute. */

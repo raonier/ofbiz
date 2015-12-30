@@ -413,6 +413,7 @@ under the License.
     <target name="start"
             description="Start OFBiz (use -Dportoffset=portNumber to shift all ports with the portNumber value)">
         <java jar="ofbiz.jar" fork="true">
+            <sysproperty key="ofbiz.db" value="${ofbiz.db}"/>
             <jvmarg value="${memory.initial.param}"/>
             <jvmarg value="${memory.max.param}"/>
             <jvmarg value="${memory.maxpermsize.param}"/>
@@ -486,6 +487,7 @@ under the License.
     <target name="load-demo" depends="build"
             description="Load all data; meant for generic OFBiz development, testing, demonstration, etc purposes">
         <java jar="ofbiz.jar" fork="true">
+            <sysproperty key="ofbiz.db" value="${ofbiz.db}"/>
             <jvmarg value="${memory.initial.param}"/>
             <jvmarg value="${memory.max.param}"/>
             <jvmarg value="${memory.maxpermsize.param}"/>

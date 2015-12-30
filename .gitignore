@@ -37,3 +37,5 @@ themes/flatgrey/webapp/flatgrey/mainrtl-min.css
 *#
 .*.swp
 .*.swo
+hs_err*.log
+replay*.log

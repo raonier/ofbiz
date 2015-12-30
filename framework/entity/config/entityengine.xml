@@ -55,9 +55,9 @@ access. For a detailed description see the core/docs/entityconfig.html file.
         <!--<group-map group-name="org.ofbiz" datasource-name="localderby"/>
         <group-map group-name="org.ofbiz.olap" datasource-name="localderbyolap"/>
         <group-map group-name="org.ofbiz.tenant" datasource-name="localderbytenant"/>  -->
-        <group-map group-name="org.ofbiz" datasource-name="localmysql"/>
-        <group-map group-name="org.ofbiz.olap" datasource-name="localmysqlolap"/>
-        <group-map group-name="org.ofbiz.tenant" datasource-name="localmysqltenant"/>
+        <group-map group-name="org.ofbiz" datasource-name="local${db}"/>
+        <group-map group-name="org.ofbiz.olap" datasource-name="local${db}olap"/>
+        <group-map group-name="org.ofbiz.tenant" datasource-name="local${db}tenant"/>
         <!-- <group-map group-name="org.ofbiz" datasource-name="localpostnew"/>
         <group-map group-name="org.ofbiz.olap" datasource-name="localpostolap"/>
         <group-map group-name="org.ofbiz.tenant" datasource-name="localposttenant"/> -->
@@ -357,6 +357,105 @@ access. For a detailed description see the core/docs/entityconfig.html file.
         <read-data reader-name="ext-test"/>
         <read-data reader-name="ext-demo"/>
         <inline-jdbc
+                jdbc-driver="org.mysql.jdbc.Driver"
+                jdbc-uri="jdbc:mysql://127.0.0.1/ofbiz?autoReconnect=true"
+                jdbc-username="ofbiz"
+                jdbc-password="next123$"
+                isolation-level="ReadCommitted"
+                pool-minsize="2"
+                pool-maxsize="250"
+                time-between-eviction-runs-millis="600000"/><!-- Please note that at least one person has experienced a problem with this value with MySQL
+                and had to set it to -1 in order to avoid this issue.
+                For more look at http://markmail.org/thread/5sivpykv7xkl66px and http://commons.apache.org/dbcp/configuration.html-->
+        <!-- <jndi-jdbc jndi-server-name="localjndi" jndi-name="java:/MySqlDataSource" isolation-level="Serializable"/> -->
+    </datasource>
+    <datasource name="localmysqlolap"
+            helper-class="org.ofbiz.entity.datasource.GenericHelperDAO"
+            field-type-name="mysql"
+            check-on-start="true"
+            add-missing-on-start="true"
+            check-pks-on-start="false"
+            use-foreign-keys="true"
+            join-style="ansi-no-parenthesis"
+            alias-view-columns="false"
+            drop-fk-use-foreign-key-keyword="true"
+            table-type="InnoDB"
+            character-set="utf8"
+            collate="utf8_general_ci">
+        <read-data reader-name="tenant"/>
+        <read-data reader-name="seed"/>
+        <read-data reader-name="seed-initial"/>
+        <read-data reader-name="demo"/>
+        <read-data reader-name="ext"/>
+        <read-data reader-name="ext-test"/>
+        <read-data reader-name="ext-demo"/>
+        <inline-jdbc
+                jdbc-driver="org.mysql.jdbc.Driver"
+                jdbc-uri="jdbc:mysql://127.0.0.1/ofbizolap?autoReconnect=true"
+                jdbc-username="ofbiz"
+                jdbc-password="next123$"
+                isolation-level="ReadCommitted"
+                pool-minsize="2"
+                pool-maxsize="250"
+                time-between-eviction-runs-millis="600000"/><!-- Please note that at least one person has experienced a problem with this value with MySQL
+                and had to set it to -1 in order to avoid this issue.
+                For more look at http://markmail.org/thread/5sivpykv7xkl66px and http://commons.apache.org/dbcp/configuration.html-->
+        <!-- <jndi-jdbc jndi-server-name="localjndi" jndi-name="java:/MySqlDataSource" isolation-level="Serializable"/> -->
+    </datasource>
+    <datasource name="localmysqltenant"
+            helper-class="org.ofbiz.entity.datasource.GenericHelperDAO"
+            field-type-name="mysql"
+            check-on-start="true"
+            add-missing-on-start="true"
+            check-pks-on-start="false"
+            use-foreign-keys="true"
+            join-style="ansi-no-parenthesis"
+            alias-view-columns="false"
+            drop-fk-use-foreign-key-keyword="true"
+            table-type="InnoDB"
+            character-set="utf8"
+            collate="utf8_general_ci">
+        <read-data reader-name="tenant"/>
+        <read-data reader-name="seed"/>
+        <read-data reader-name="seed-initial"/>
+        <read-data reader-name="demo"/>
+        <read-data reader-name="ext"/>
+        <read-data reader-name="ext-test"/>
+        <read-data reader-name="ext-demo"/>
+        <inline-jdbc
+                jdbc-driver="org.mysql.jdbc.Driver"
+                jdbc-uri="jdbc:mysql://127.0.0.1/ofbiztenant?autoReconnect=true"
+                jdbc-username="ofbiz"
+                jdbc-password="next123$"
+                isolation-level="ReadCommitted"
+                pool-minsize="2"
+                pool-maxsize="250"
+                time-between-eviction-runs-millis="600000"/><!-- Please note that at least one person has experienced a problem with this value with MySQL
+                and had to set it to -1 in order to avoid this issue.
+                For more look at http://markmail.org/thread/5sivpykv7xkl66px and http://commons.apache.org/dbcp/configuration.html-->
+        <!-- <jndi-jdbc jndi-server-name="localjndi" jndi-name="java:/MySqlDataSource" isolation-level="Serializable"/> -->
+    </datasource>
+    <datasource name="localmariadb"
+            helper-class="org.ofbiz.entity.datasource.GenericHelperDAO"
+            field-type-name="mysql"
+            check-on-start="true"
+            add-missing-on-start="true"
+            check-pks-on-start="false"
+            use-foreign-keys="true"
+            join-style="ansi-no-parenthesis"
+            alias-view-columns="false"
+            drop-fk-use-foreign-key-keyword="true"
+            table-type="InnoDB"
+            character-set="utf8"
+            collate="utf8_general_ci">
+        <read-data reader-name="tenant"/>
+        <read-data reader-name="seed"/>
+        <read-data reader-name="seed-initial"/>
+        <read-data reader-name="demo"/>
+        <read-data reader-name="ext"/>
+        <read-data reader-name="ext-test"/>
+        <read-data reader-name="ext-demo"/>
+        <inline-jdbc
                 jdbc-driver="org.mariadb.jdbc.Driver"
                 jdbc-uri="jdbc:mariadb://127.0.0.1/ofbiz?autoReconnect=true"
                 jdbc-username="ofbiz"
@@ -369,7 +468,7 @@ access. For a detailed description see the core/docs/entityconfig.html file.
                 For more look at http://markmail.org/thread/5sivpykv7xkl66px and http://commons.apache.org/dbcp/configuration.html-->
         <!-- <jndi-jdbc jndi-server-name="localjndi" jndi-name="java:/MySqlDataSource" isolation-level="Serializable"/> -->
     </datasource>
-    <datasource name="localmysqlolap"
+    <datasource name="localmariadbolap"
             helper-class="org.ofbiz.entity.datasource.GenericHelperDAO"
             field-type-name="mysql"
             check-on-start="true"
@@ -402,7 +501,7 @@ access. For a detailed description see the core/docs/entityconfig.html file.
                 For more look at http://markmail.org/thread/5sivpykv7xkl66px and http://commons.apache.org/dbcp/configuration.html-->
         <!-- <jndi-jdbc jndi-server-name="localjndi" jndi-name="java:/MySqlDataSource" isolation-level="Serializable"/> -->
     </datasource>
-    <datasource name="localmysqltenant"
+    <datasource name="localmariadbtenant"
             helper-class="org.ofbiz.entity.datasource.GenericHelperDAO"
             field-type-name="mysql"
             check-on-start="true"
