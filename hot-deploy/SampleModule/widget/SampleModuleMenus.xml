@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<menus xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://ofbiz.apache.org/dtds/widget-menu.xsd">
+	<menu name="SampleModuleAppBar" default-menu-item-name="main" id="app-navigation" type="simple" title="SampleModule Application"
+        default-selected-style="selected" selected-menuitem-context-field-name="headerItem">
+        <menu-item name="main" title="Main"><link target="main"/></menu-item>
+        <menu-item name="person" title="Person"><link target="person"/></menu-item>
+        <menu-item name="personForm" title="Person Form"><link target="personForm"/></menu-item>
+		<!-- Part3 Writing Events 2015.12.10 추가 -->
+        <menu-item name="events" title="Events"><link target="Events"/></menu-item>
+	</menu>
+	<!-- Part3 Writing Events 2015.12.10 추가 -->
+	<menu name="EventMenu" default-menu-item-name="eventMinilang" default-selected-style="selected"
+         type="simple" menu-container-style="button-bar button-style-1" selected-menuitem-context-field-name="headerItem">
+      <menu-item name="eventMinilang" title="Create Person --- Event MiniLang">
+           <link target="CreateSampleModulePersonEventM"/>
+      </menu-item>
+      <menu-item name="eventJava" title="Create Person --- Event Java">
+           <link target="CreateSampleModulePersonEventJ"/>
+      </menu-item>   
+	</menu>
+	
+
+</menus>

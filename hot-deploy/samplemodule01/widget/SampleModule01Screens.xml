@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<screens xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="http://ofbiz.apache.org/dtds/widget-screen.xsd">
+
+    <screen name="main">
+        <section>
+            <actions>
+                <set field="headerItem" value="main"/><!-- this highlights the selected menu-item with name "main" -->
+            </actions>
+            <widgets>
+                <label text="This is first SampleModule"/>
+                <decorator-screen name="SampleModule01CommonDecorator" location="${parameters.mainDecoratorLocation}">
+                    <decorator-section name="body">
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen>
+	<screen name="person">
+        <section>
+           <actions>
+                 <script location="component://samplemodule01/webapp/samplemodule01/WEB-INF/actions/Person.groovy"/>
+           </actions>
+           <widgets>
+                 <decorator-screen name="SampleModule01CommonDecorator" location="${parameters.commonDecoratorLocation}">
+                    <decorator-section name="body">
+                         <platform-specific>
+                               <html>
+                                <html-template location="component://samplemodule01/webapp/samplemodule01/Person.ftl"/>
+                               </html>
+                         </platform-specific>
+                    </decorator-section>
+                 </decorator-screen>       
+           </widgets>
+        </section>
+	</screen>
+	<screen name="personForm">
+        <section>
+            <actions>
+                <set field="headerItem" value="personForm"/>
+                <set field="titleProperty" value="PageTitleSampleModule01PersonForm"/>
+                <entity-condition entity-name="Person" list="persons"/>
+            </actions>
+            <widgets>
+                <decorator-screen name="SampleModule01CommonDecorator" location="${parameters.commonDecoratorLocation }">
+                    <decorator-section name="body">
+                        <label text="Person List" style="h2"/>
+                        <include-form name="ListPersons" location="component://samplemodule01/widget/SampleModule01Forms.xml"></include-form>
+                    </decorator-section>
+                </decorator-screen>       
+            </widgets>
+        </section>
+	</screen>
+
+</screens>
